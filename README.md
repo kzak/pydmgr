@@ -1,0 +1,2 @@
+# pydmgr
+A Directory Manager
