@@ -37,9 +37,7 @@ class PathBuilder:
         return self.path
 
     def add_params(self, params: dict) -> Path:
-        str_params = "-".join(
-            [f"{k}={v}" for k, v in params.items() if type(v) in [str, int, float]]
-        )
+        str_params = "-".join([f"{k}={v}" for k, v in params.items() if type(v) in [str, int, float]])
         self.path = self.path / str_params
         return self.path
 

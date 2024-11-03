@@ -1,5 +1,6 @@
-from pypb import PathBuilder
 from datetime import datetime
+
+from pypb import PathBuilder
 
 
 def test_pypb():
