@@ -21,3 +21,17 @@ params = dict(n_epochs=1000, n_batch_size=256, lr=0.01)
 data_dir = PathBuilder(".").add_path("data").add_date().add_params(params).mkdir()
 # => Create: "./data/yyyy-mm-dd/n_epochs=1000-n_batch_size=256-lr=0.01/"
 ```
+
+
+## Development
+
+```sh
+# Install dependencies
+uv sync --dev
+
+# Run tests
+uv run pytest tests/
+
+# linting
+uv run ruff check
+```

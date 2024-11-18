@@ -29,19 +29,19 @@ class PathBuilder:
 
     def add_path(self, path: str) -> Path:
         self.path = self.path / path
-        return self.path
+        return self
 
     def add_date(self, date: datetime = datetime.today()) -> Path:
         ymd = date.strftime("%Y-%m-%d")
         self.path = self.path / ymd
-        return self.path
+        return self
 
     def add_params(self, params: dict) -> Path:
         str_params = "-".join([f"{k}={v}" for k, v in params.items() if type(v) in [str, int, float]])
         self.path = self.path / str_params
-        return self.path
+        return self
 
-    def mkdir(self) -> Path:
+    def build(self) -> Path:
         self.path.mkdir(parents=True, exist_ok=True)
         logger.info(f"Created: {self.path}")
         return self.path
