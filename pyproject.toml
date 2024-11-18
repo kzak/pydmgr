@@ -9,32 +9,15 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "License :: OSI Approved :: MIT License",
 ]
-dependencies = []
-
-[project.optional-dependencies]
-dev = [
-    "pytest",
-    "flake8",
-    "mypy",
-    "black",
-    "isort",
-    "taskipy",
-    "pre-commit",
+dependencies = [
 ]
 
-[tool.black]
-target-version = ["py39"]
-line-length = 120
-
-[tool.isort]
-profile = "black"
-py_version = 39
-line_length = 120
+[dependency-groups]
+dev = [
+    "mypy>=1.13.0",
+    "pytest>=8.3.3",
+    "ruff>=0.7.4",
+]
 
 [tool.mypy]
 python_version = 3.9
-
-[tool.taskipy.tasks]
-test = "python -m pytest tests/"
-format = "black .; isort ."
-lint = "mypy .; flake8 ."
